@@ -1,0 +1,121 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4a90e2;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+input[type="text"], input[type="url"] {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="url"]:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Button styles */
+button {
+  padding: 12px;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #357ABD;
+}
+
+/* Job list */
+.job-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.job-list li {
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-list li span {
+  font-weight: 600;
+  color: #222;
+}
+
+/* Buttons inside job item */
+.job-list li button {
+  background-color: #e53e3e; /* red for delete */
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.job-list li button:hover {
+  background-color: #9b2c2c;
+}
+
+/* Applied toggle button */
+.toggle-applied {
+  background-color: #38a169; /* green */
+  margin-left: 10px;
+  padding: 6px 12px;
+}
+
+.toggle-applied.applied {
+  background-color: #2f855a;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+  
+  button {
+    font-size: 1rem;
+  }
+}
