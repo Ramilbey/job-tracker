@@ -10,6 +10,11 @@ function App() {
       setInput("");
     }
   };
+  const toggleApplied = (index) => {
+    const newJobs = [...jobs];
+    newJobs[index].applied = !newJobs[index].applied;
+    setJobs(newJobs);
+  };
   return (
     <div className="App">
       <header className="App-header">
