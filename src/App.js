@@ -15,23 +15,32 @@ function App() {
     newJobs[index].applied = !newJobs[index].applied;
     setJobs(newJobs);
   };
+  const deleteJob = index => {
+    setJobs(jobs.filter((_, i)=>i !==index))
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div style={{ padding: '20px' }}>
+    <h2>Job Application Tracker</h2>
+    <input 
+      value={input} 
+      onChange={e => setInput(e.target.value)} 
+      placeholder="Enter job title" 
+    />
+    <button onClick={addJob}>Add Job</button>
+    <ul>
+      {jobs.map((job, i) => (
+        <li key={i}>
+          <span 
+            style={{ textDecoration: job.applied ? 'line-through' : 'none' }}
+            onClick={() => toggleApplied(i)}
+          >
+            {job.title}
+          </span>
+          <button onClick={() => deleteJob(i)}>❌</button>
+        </li>
+      ))}
+    </ul>
+  </div>
   );
 }
 
