@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function App() {
-  const [ jobs, setJobs ] = useState([]);
-  const [input, setInput] = useState("")
-  
+  const [jobs, setJobs] = useState([]);
+  const [input, setInput] = useState("");
+
+  const addJob = () => {
+    if (input.trim()) {
+      setJobs([...jobs, { title: input, applied: false }]);
+      setInput("");
+    }
+  };
   return (
     <div className="App">
       <header className="App-header">
